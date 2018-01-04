@@ -18,6 +18,7 @@ Então, uma forma melhor, mas ainda não ideal de se escrever, seria:
 #nav a {}
 ```
 
+***
 
 
 ## CSS Orientado a Objetos (OOCSS)
@@ -38,6 +39,8 @@ Com uso do OOCSS:
 * __Simplificado e acessível:__ um bombonzinho!
 
 
+***
+
 
 ## SMACSS
 * Base;
@@ -47,14 +50,52 @@ Com uso do OOCSS:
 * Theme (Tema);
 
 
+***
+
 
 ## Pré-processadores CSS
 Um pré-processador é um programa que recebe texto e efetua conversões léxicas nele. As conversões podem incluir substituição de macros, inclusão condicional e inclusão de outros arquivos.
 
 Quer dizer, você escreverá código na sintaxe do pré-processador de sua preferência e, através de alguns processos de conversão, ele transforma (ou compila) essa sintaxe específica e própria em código CSS, a que todos já estamos habituados. Caso contrário, não se teria nenhuma estilização, já que, para este fim, os navegadores precisam de arquivos .css.
 
+
+***
+
+
 ### SASS e LESS
 Sass e Less fornecem quase o mesmo acervo de funcionalidades. Há várias controvérsias e discussões acalouradas entre os adeptos de um e outro, mas a verdade é que, nessa quase conversão de características, ao optar por usar Sass ou Less, você estará bem servido e conseguirá melhorar muito a organização e workflow de desenvolvimento de estilos!
+
+
+***
+
+
+### Instalar e compilar
+Como o Ruby já vem por padrão no linux, só basta instalar o SASS no terminal:
+
+```bash
+sudo apt install gem
+sudo gem install sass --no-user-install
+```
+
+Para verificar se foi instalado com êxito:
+
+```bash
+sass -v
+```
+
+
+Para __compilar__ um arquivo .scss, temos que executar no terminal (dentro da pasta):
+
+```bash
+sass nomedoarquivo.scss:nomedoarquivo.css
+```
+
+Será criado dois arquivos: **nomedoarquivo.css.map** e **nomedoarquivo.css**.
+
+Agora só basta linkar em nosso HTML o **nomedoarquivo.css**.
+
+***
+
 
 ### (SASS) Aninhamento de regras
 É possível aninhar regras CSS para escrever um código mais conciso e menor, conferindo hierarquia visual às regras e facilitando da leitura!
@@ -67,8 +108,8 @@ nav ul {
   margin: 0;
   padding: 0;
 }
-  nav li {
-    display: inline-block;
+nav li {
+  display: inline-block;
 }
 nav a {
   display: block;
@@ -97,6 +138,8 @@ nav {
 }
 ```
 
+***
+
 
 ### Referência ao ascendente
 Em algumas situações, é preciso fazer referência ao ascendente para se montar uma regra apropriadamente. Por exemplo, dentro do aninhamento permitido por Sass, como seria para colocar uma regra com :hover ?
@@ -117,6 +160,9 @@ Isso geraria: ```.selector:hover {}```
 A intenção com **&** é repetir o seletor ascendente.
 
 
+***
+
+
 ### Variáveis
 Para declarar uma variável, basta dar um nome qualquer precedido de $ , usar : e dar o valor que se queira, como em:
 
@@ -134,6 +180,8 @@ Variáveis podem conter quaisquer valores usados em CSS, como em:
 $font-stack: Helvetica, sans-serif;
 $width: 5em;
 ```
+
+***
 
 
 ### Interpolação de variáveis
@@ -157,6 +205,8 @@ Que gera:
   border-top-left-radius: 5px;
 }
 ```
+
+***
 
 
 ## Mixins (argumentos)
