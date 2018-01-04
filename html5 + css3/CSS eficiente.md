@@ -57,23 +57,26 @@ Sass e Less fornecem quase o mesmo acervo de funcionalidades. Há várias contro
 
 Por exemplo, veja esse trecho de CSS:
 
-`` nav ul {
-list-style: none;
-margin: 0;
-padding: 0;
+```CSS
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-nav li {
-display: inline-block;
+  nav li {
+    display: inline-block;
 }
 nav a {
-display: block;
-padding: 6px 12px;
-text-decoration: none;
-} ``
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+}
+```
 
 Em SCSS, é possível escrever assim:
 
-``nav {
+```SCSS
+nav {
   ul {
     margin: 0;
     padding: 0;
@@ -87,20 +90,21 @@ Em SCSS, é possível escrever assim:
     padding: 6px 12px;
     text-decoration: none;
   }
-}``
+}```
 
 
 ### Referência ao ascendente
 Em algumas situações, é preciso fazer referência ao ascendente para se montar uma regra apropriadamente. Por exemplo, dentro do aninhamento permitido por Sass, como seria para colocar uma regra com :hover ?
 Para esses casos, Sass provê uma característica muito interessante, tornando possível fazer referência ao elemento ascendente imediatamente superior: o caractere &.
 
-``.selector {
+```SCSS
+.selector {
   $:hover {
 
   }
 }
-``
-Isso geraria: ``.selector:hover {}``
+```
+Isso geraria: ```.selector:hover {}```
 
 A intenção com **&** é repetir o seletor ascendente.
 
@@ -108,15 +112,17 @@ A intenção com **&** é repetir o seletor ascendente.
 ## Variáveis
 Para declarar uma variável, basta dar um nome qualquer precedido de $ , usar : e dar o valor que se queira, como em:
 
-`` $mainColor: #c0ffee;
+```SCSS
+$mainColor: #c0ffee;
 
   header {
     background-color: $mainColor;
   }
-``
+```
 
 Variáveis podem conter quaisquer valores usados em CSS, como em:
 
-``$font-stack: Helvetica, sans-serif;
+```SCSS
+$font-stack: Helvetica, sans-serif;
 $width: 5em;
-``
+```
