@@ -188,9 +188,7 @@ Isso gera:
 ***
 
 ### Extensão
-é possível usar ```css
-@extend
-``` para compartilhar
+é possível usar ```@extend``` para compartilhar
 uma série de propriedades/valores de várias regras diferentes em uma mesma regra.
 
 ```CSS
@@ -226,4 +224,4 @@ Criar um placeholder selector é como uma regra comum, com a diferença de que n
 
 ***
 
-### Importação 
+### Importação
