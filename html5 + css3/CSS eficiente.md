@@ -69,7 +69,7 @@ Sass e Less fornecem quase o mesmo acervo de funcionalidades. Há várias contro
 ***
 
 
-### Instalar e compilar
+### Instalar e compilar (linux)
 Como o Ruby já vem por padrão no linux, só basta instalar o SASS no terminal:
 
 ```bash
@@ -275,3 +275,28 @@ Criar um placeholder selector é como uma regra comum, com a diferença de que n
 ***
 
 ### Importação
+Para essas ocasiões, o Sass oferece um recurso de importação, usando ```@import```.
+
+No exemplo de placeholder selectors mostrado agora há pouco, certamente haveria um arquivo Sass com todos eles e, conforme a necessidade e a organização do projeto por exemplo, o uso da metodologia SMACSS , a criação de mais arquivos para conterem as regras devidas.
+
+Logo no início do arquivo style.scss bastaria colocar:
+
+```SCSS
+@import 'generics';
+```
+Tudo o que está dentro de ```_generics.scss``` poderia ser acessado. Não é preciso colocar o _ nem .scss na sintaxe de importação. Também é pos-
+sível e, quase sempre, necessário importar vários arquivos, separando-os por
+vírgula na declaração do ```@import```.
+
+Neste ponto, cabem duas observações importantes. A primeira é que se deve ter atenção ao nome do arquivo que foi importado, que começa com um subtraço (underline). Dentro da dinâmica do Sass, isso é chamado de partial e significa que, na compilação, somente será gerado um arquivo CSS de style.scss . Em outras palavras, na compilação, partials não geram sua contraparte .css.
+A segunda é que é importante não confundir esse @import com a importação de arquivos que já existe em CSS puro. Esta faz uma requisição extra no servidor, chamando um arquivo à parte; aquela junta todos os arquivos importados no importador, garantindo a geração de um arquivo único com
+todas as regras.
+
+**Por padrão, Sass não permite importar arquivos .css diretamente.**
+
+
+***
+
+
+### CSS namespaces
+Tentando explicar de maneira simples e sucinta, namespaces são como regiões no código, nas quais nomes de variáveis, de funções etc. são válidos dentro destas linguagens de programação.
