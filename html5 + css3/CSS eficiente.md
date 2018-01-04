@@ -7,12 +7,16 @@ Seletores superqualificados fazem com que o navegador trabalhe mais do que preci
 
 Um exemplo, infelizmente, bastante comum:
 
-``ul#nav li a {} ``
+```CSS
+ul#nav li a {}
+```
 Já se sabe que, se o __a__ está dentro de __li__, que tem que estar dentro de __#nav__, de modo que é possível, eliminar o __li__ do seletor logo de cara. Como o __#nav__ é um ID, o elemento __ul__ também pode ser eliminado.
 
 Então, uma forma melhor, mas ainda não ideal de se escrever, seria:
 
-``#nav a {}``
+```css
+#nav a {}
+```
 
 
 
@@ -100,7 +104,9 @@ Para esses casos, Sass provê uma característica muito interessante, tornando p
 ```SCSS
 .selector {
   $:hover {
-
+    /*
+    código
+    */
   }
 }
 ```
