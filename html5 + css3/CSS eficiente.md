@@ -94,7 +94,8 @@ nav {
     padding: 6px 12px;
     text-decoration: none;
   }
-}```
+}
+```
 
 
 ### Referência ao ascendente
@@ -110,12 +111,13 @@ Para esses casos, Sass provê uma característica muito interessante, tornando p
   }
 }
 ```
+
 Isso geraria: ```.selector:hover {}```
 
 A intenção com **&** é repetir o seletor ascendente.
 
 
-## Variáveis
+### Variáveis
 Para declarar uma variável, basta dar um nome qualquer precedido de $ , usar : e dar o valor que se queira, como em:
 
 ```SCSS
@@ -132,3 +134,96 @@ Variáveis podem conter quaisquer valores usados em CSS, como em:
 $font-stack: Helvetica, sans-serif;
 $width: 5em;
 ```
+
+
+### Interpolação de variáveis
+Juntar o valor de variáveis com outras variáveis ou valores.
+
+Para se fazer isso, referencia-se a variável usando #{VARIAVEL} e, automaticamente, a interpolação acontece. Para ficar mais claro, veja o exemplo:
+
+```SCSS
+$vert: top;
+$horz: left;
+$radius: 5px;
+.rounded-#{$vert}-#{$horz} {
+  border-#{$vert}-#{$horz}-radius: $radius;
+}
+```
+
+Que gera:
+
+```CSS
+.rounded-top-left {
+  border-top-left-radius: 5px;
+}
+```
+
+
+## Mixins (argumentos)
+Mixins permitem que se façam agrupamentos de declarações CSS para serem reusados onde se queira.
+O primeiro para definir o mixin, em si; o segundo, para indicar em qual ponto do código se quer usá-lo.
+
+```SCSS
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+.box {
+  @include border-radius(10px);
+}
+```
+
+Isso gera:
+
+```CSS
+.box {
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  -ms-border-radius:10px;
+  border-radius:10px;
+}
+```
+***
+
+### Extensão
+é possível usar ```css
+@extend
+``` para compartilhar
+uma série de propriedades/valores de várias regras diferentes em uma mesma regra.
+
+```CSS
+.default-box {
+  background-color: #efefef;
+  border: 1px solid #000;
+  color: #333;
+}
+.alert-box {
+  @extend .default-box;
+  font-size: 2em;
+}
+```
+
+***
+
+### Seletores placeholder
+pode haver situações em que determinadas regras que serão estendidas só precisem existir para isso e não precisem estar presentes no CSS compilado. Para isso, saiba que existem o __seletores placeholder__.
+Criar um placeholder selector é como uma regra comum, com a diferença de que não se coloca um elemento, classe ou ID, mas sim um %.
+
+```SCSS
+%bold {
+  font-weight: bold;
+}
+%display-block {
+  display: block;
+}
+.my-module {
+  @extend %bold, %display-block;
+  border: 1px solid #ccc;
+}
+```
+
+***
+
+### Importação 
