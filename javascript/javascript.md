@@ -38,7 +38,9 @@ console.log(typeof nome);
 ```
 
 
+
 ***
+
 
 
 ## Arrays
