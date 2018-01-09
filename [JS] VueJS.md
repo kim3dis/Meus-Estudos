@@ -1,4 +1,7 @@
-# Vue.js: Construindo single page aplications - Alura
+# Vue.JS
+
+## Conteúdo utilizado
+Vue.js: Construindo single page aplications - Alura
 
 ## Instalação
 ```bash
