@@ -296,7 +296,3 @@ todas as regras.
 
 
 ***
-
-
-### CSS namespaces
-Tentando explicar de maneira simples e sucinta, namespaces são como regiões no código, nas quais nomes de variáveis, de funções etc. são válidos dentro destas linguagens de programação.
