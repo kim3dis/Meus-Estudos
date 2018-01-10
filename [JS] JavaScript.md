@@ -93,3 +93,63 @@ var videogames = ["PS4", "XBox", "WiiU", "GBA"];
 videogames.splice(3, 2); // o 3 ele indica de onde quer começar a remover; o 2 indica quantos remover;
 console.log(videogames);
 ```
+
+
+
+***
+
+
+
+## Condicionais
+
+### if e else
+```Javascript
+var idade = 39;
+if (idade >= 18) {
+	console.log('Você pode dirigir!');
+} else {
+	console.log('Você não pode dirigir');
+}
+```
+
+### if, else e else if
+```Javascript
+var faculdade = true,
+	ensinoMedio = true;
+if (faculdade) {
+	console.log('Adiciona R$1000');
+} else if (ensinoMedio) {
+	console.log('Adiciona RS800');
+} else {
+	console.log('Adiciona R$600');
+}
+```
+
+
+### Boolean
+Retorna true ou false.
+
+```Javascript
+var teste1 = '',
+	teste2 = 'Olá!';
+console.log(Boolean(teste1)); // retorna false
+console.log(Boolean(teste2)); // retorna true
+```
+
+Tudo o que for undefined, null, 0, NaN e string vazia retornam ```false```.
+
+
+
+***
+
+
+
+## Function
+```Javascript
+function areaQuadrado(lado) {
+	var area = lado * lado;
+	return area;
+}
+console.log(areaQuadrado(4));
+```
+
