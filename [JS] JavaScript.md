@@ -2,6 +2,10 @@
 
 ## Sumário
 - [Variáveis e Constantes](#variáveis-e-constantes)
+- [Arrays](#arrays)
+- [Condicionais](#condicionais)
+- [Function](#function)
+- [Loop](#loop)
 - [Objetos](#objetos)
 
 ## Variáveis e Constantes
