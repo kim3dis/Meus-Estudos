@@ -1,5 +1,4 @@
 # Javascript
-
 ## Variáveis e Constantes
 ```Javascript
 var nome = "kim3dis";
@@ -126,6 +125,30 @@ if (faculdade) {
 ```
 
 
+### switch
+Usa-se o switch quando se tem muitas opções para verificar.
+```Javascript
+var cor = "azul";
+switch (cor) {
+	case "vermelho":
+		console.log("Você escolheu o vermelho!");
+		break;
+	case "verde":
+		console.log("Você escolheu o verde!");
+		break;
+	case "azul":
+		console.log("Você escolheu o azul!");
+		break;
+	default:
+		console.log("Não temos essa cor.");
+}
+```
+
+Usamos o ```break``` para parar os comandos de um ```case``` e sair do switch. Caso contrário, se não houvesse o ```break```, seria acessado outro ```case```.
+
+Caso não seja nenhuma das opções predefinidas, será chamado o ```default```. No ```default``` não há utilidade de se utilizar o ```break```, pois não há nenhum ```case``` abaixo dele.
+
+
 ### Boolean
 Retorna true ou false.
 
@@ -153,3 +176,93 @@ function areaQuadrado(lado) {
 console.log(areaQuadrado(4));
 ```
 
+* Variáveis dentro de uma função (escopo) pode ser acessada fora dela (outro escopo);
+
+
+### Hosting
+As funções declaradas vão para a memória do JS, antes da execução.
+
+
+### Funções anônimas
+Funções sem nome.
+```Javascript
+var custoCarro = function(portas) {
+	var precoInicial = 10000;
+	if (portas) {
+		return portas * precoInicial;
+	} else {
+		return 2 * precoInicial;
+	}
+}
+
+console.log(custoCarro());
+```
+
+
+
+***
+
+
+
+## Loop
+Executar uma condição até que ela seja verdadeira.
+
+### for
+```Javascript
+for (var i = 0; i < 10; i++) {
+	console.log(i);
+}
+```
+
+### while
+```Javascript
+var i = 0;
+while (i < 10) {
+	console.log(i);
+	i += 2;
+}
+```
+
+
+
+
+***
+
+
+
+## Objetos
+Objetos são coleções de propriedades. Estas compostas pela chave e valor.
+Objetos servem para partir o código em pequenas partes, que podem ser utilizadas quando necessário.
+
+Basta colocar {} em uma variável que vira objeto.
+
+```Javascript
+var kim3dis = {};
+console.log(typeof kim3dis); // retorna: object
+```
+
+```Javascript
+var kim3dis = {
+	nome: "kim3dis",
+	estudante: true,
+	idade: 55
+};
+
+console.log(kim3dis.idade);
+```
+
+### métodos
+Valores podem ser funções, isso transforma a propriedade em um método.
+
+```Javascript
+var quadrado = {
+	totalLados: 4;
+	area: function(lado) {
+		return lado * lado;
+	},
+	perimetro: function(lado) {
+		return lado * this.totalLados;
+	}
+}
+console.log(quadrado.perimetro(20));
+```
