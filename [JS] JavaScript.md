@@ -380,3 +380,11 @@ var $meuId = $('#meuID');
 ***
 
 
+
+## Manipulando o DOM
+
+### .append()
+Adiciona conteúdo ao final do item selecionado (dentro da tag).
+```Javascript
+$('p').append('<span>adiciona ao final</span>')
+```
