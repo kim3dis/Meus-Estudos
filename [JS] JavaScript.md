@@ -305,7 +305,7 @@ document.getElementById("button");
 document.getElementByClass("button");
 ```
 
-```jQuery
+```javascript
 // jQuery
 $("#button");
 $(".button");
@@ -337,6 +337,7 @@ Após, só usar com script no documento HTML no ```<head>``` ou no ```<body>```.
 
 ### DOM: o que é?
 **Document Object Model**
+
 O DOM é como se fosse o HTML mais vivo que sofre alteração. 
 
 
@@ -350,17 +351,17 @@ Vale lembrar que, o sifrão ($), pode ser usado para iniciar uma variável.
 
 
 ### ID
-```jquery
+```javascript
 $('#meuID');
 ```
 
 ### Classes
-```jQuery
+```javascript
 $('.minhaClasse');
 ```
 
 ### Tag HTML
-```jQuery
+```javascript
 $('span'); //<span>
 $('ul li a'); // igual no css; herança;
 ```
@@ -369,7 +370,7 @@ $('ul li a'); // igual no css; herança;
 1. Para não se repetir varias vezes;
 2. Uma vez que se coloca na variável, ficará na memória. Sendo assim, acessar ele é mais rápido do que puxar ele várias vezes de um lugar diferente;
 
-```jquery
+```javascript
 var $meuId = $('#meuID');
 ```
 
@@ -385,6 +386,72 @@ var $meuId = $('#meuID');
 
 ### .append()
 Adiciona conteúdo ao final do item selecionado (dentro da tag).
+
 ```Javascript
 $('p').append('<span>adiciona ao final</span>')
 ```
+
+
+### .apendTo()
+O conteúdo do objeto jQuery que será adicionado ao parâmetro do ```appendTo()```.
+
+```javascript
+$('h2').appendTo($('h1'));
+```
+
+Neste código ele adiciona todos os h2 ao final de todos os h1.
+
+
+### .html()
+[get] Pega o conteúdo dentro do primeiro item selecionado e transforma em uma string.
+
+```javascript
+var paragrafo = $('p').html(); // armazena em uma variável o <p>
+console.log(paragrafo); // mostra o primeiro P da página;
+```
+
+[set] Adiciona um valor a todos os itens selecionados.
+
+```Javascript
+$('p').html('Sou um texto novo.');
+$('h1, h2, h3').html('Modifico todos os títulos e sub-títulos da página.');
+``` 
+
+
+
+### .text()
+[get] Pega todos os valores selecionados.
+
+```javascript
+var getH3 = $('h3').text();
+console.log(getH3);
+```
+
+
+[set] Adiciona o conteúdo, porém não renderiza o HTML dentro dele.
+
+```javascript
+$('p').text("<span>Testando</span>");
+// Ele não rederizará o <span>, sendo assim, a tag <span> será mostrada na página sem quaisquer problemas.
+```
+
+
+
+### .prepend() e .prependTo()
+Mesma coisa que append, porém insere antes do conteúdo da seleção.
+
+
+
+### .after() e .insertAfter()
+Adiciona conteúdo após o item selecionado.
+
+```javascript
+$('p').after('<span> * </span>');
+
+$('<span> * </span>').insertAfter('p'); // só muda a ordem
+``` 
+
+
+
+### .before() e .insertBefore()
+Mesma coisa que ```.after()```, só que adiciona antes do conteúdo.
