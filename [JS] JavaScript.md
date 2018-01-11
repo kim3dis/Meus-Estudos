@@ -8,6 +8,8 @@
 - [Loop](#loop)
 - [Objetos](#objetos)
 
+- [jQuery](#jquery)
+
 ## Variáveis e Constantes
 ```Javascript
 var nome = "kim3dis";
@@ -275,3 +277,106 @@ var quadrado = {
 }
 console.log(quadrado.perimetro(20));
 ```
+
+
+
+***
+
+
+
+# jQuery
+jQuery é uma biblioteca de JavaScript. Que facilita a manipulação do DOM.
+! __DOM:__ É tipo o HTML final do site, que a gente consegue ver nas ferramentas ali de desenvolvedor do browser.
+
+Um código utilizando só JavaScript é bem maior do que um código jQuery.
+
+
+
+***
+
+
+
+## jQuery vs. JS Puro
+Código para selecionar um elemento (ID) da página.
+
+```Javascript
+// JS Puro
+document.getElementById("button");
+document.getElementByClass("button");
+```
+
+```jQuery
+// jQuery
+$("#button");
+$(".button");
+```
+
+Caso queira ver mais, acesse o site [You might not need jquery](youmightnotneedjquery.com)
+
+
+
+***
+
+
+
+## Instalação
+Basta acessar o site do [jQuery](https://jquery.com/download/) e escolher entre compressed ou uncompressed.
+Após, só usar com script no documento HTML no ```<head>``` ou no ```<body>```.
+
+```HTML
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+```
+
+
+
+***
+
+
+
+## Selecionando elementos no DOM
+
+### DOM: o que é?
+**Document Object Model**
+O DOM é como se fosse o HTML mais vivo que sofre alteração. 
+
+
+
+```$ = jQuery;```
+
+O sifrão ($) é só um atalho para o nome jQuery. Eles são iguais.
+
+Vale lembrar que, o sifrão ($), pode ser usado para iniciar uma variável.
+
+
+
+### ID
+```jquery
+$('#meuID');
+```
+
+### Classes
+```jQuery
+$('.minhaClasse');
+```
+
+### Tag HTML
+```jQuery
+$('span'); //<span>
+$('ul li a'); // igual no css; herança;
+```
+
+### Salvar uma seleção em uma variável
+1. Para não se repetir varias vezes;
+2. Uma vez que se coloca na variável, ficará na memória. Sendo assim, acessar ele é mais rápido do que puxar ele várias vezes de um lugar diferente;
+
+```jquery
+var $meuId = $('#meuID');
+```
+
+!__DICA:__ Quando a variável começa com sifrão ($) é só para saber que ela é um elemento de jQuery.
+
+
+
+***
+
+
