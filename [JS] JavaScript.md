@@ -455,3 +455,94 @@ $('<span> * </span>').insertAfter('p'); // só muda a ordem
 
 ### .before() e .insertBefore()
 Mesma coisa que ```.after()```, só que adiciona antes do conteúdo.
+
+
+
+## Eventos
+São comandos que, quando ativos, fazem alguma ação.
+
+### click / .click()
+Aciona uma função após o usuário clicar no target.
+
+```Javascript
+$('a').click(function() {
+	$('p').text('Mudei!'); // qualquer método
+});
+```
+
+
+
+### .on()
+Os eventos também podem ser escritos com a função ```.on()```.
+
+```javascript
+$('a').on('click', function(){
+	$('a').text("Mudei!");
+});
+```
+
+Onde está ```'click'```, é a ação que deve ser tomada.
+
+Este dá mais flexibilidade do que o ```.click()```.
+
+
+
+### $(this)
+Use o this para se referir ao objeto do evento.
+
+```javascript
+$('a').on('click', function(){
+	$(this).text('Mudei!'); // this se refere ao objeto clicado
+});
+```
+
+
+
+### O event object
+
+```javascript
+$('a').on('click', function(e){
+	e.preventDefault();
+	$(this).text('Mudei!'); // this se refere ao objeto clicado
+});
+```
+
+```preventDefault()``` 
+:previne que seja feito o padrão daquele objeto, como por exemplo, um ```<a href="github.com">``` com ```preventDefault()``` este ```<a>``` não levaria a lugar algum ao ser clicado.
+
+Digamos que tenho um ```<a>``` linkado com uma id de uma div. Eu não quero que, ao ser clicado, a tela seja redirecionada ao div instantaneamente. Gostaria de uma animação suave com JS. Para isso, eu teria que primeiro usar o ```preventDefault()``` para tirar o evento padrão e depois criar toda a animação.
+
+
+
+### mouseenter / .mouseenter() | mouseleave / .mouseleave()
+
+```javascript
+$('p').on('mouseenter', function(){
+	$(this).text('Mudei!'); //muda o texto quando o mouse entra no <p>
+});
+
+$('p').on('mouseleave', function(){
+	$(this).text('Você tirou o mouse :C');
+});
+
+```
+
+
+
+### scroll / .scroll()
+
+```javascript
+$(document).on('scroll', function(){
+	$('a').append('Scrollou');
+});
+```
+
+
+
+### resize
+
+````javascript
+$(window).on('resize', function(){
+	$('a').text($('body').width());
+});
+```
