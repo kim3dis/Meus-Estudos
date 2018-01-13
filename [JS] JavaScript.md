@@ -541,8 +541,117 @@ $(document).on('scroll', function(){
 
 ### resize
 
-````javascript
+```javascript
 $(window).on('resize', function(){
 	$('a').text($('body').width());
 });
+```
+
+
+
+## Classes
+### Adicionando
+```javascript
+$('a').click(function() {
+	$(this).addClass('active');
+});
+```
+
+### Removendo
+```javascript
+$('a').click(function() {
+	$(this).removeClass('active');
+});
+```
+
+### Adicionando e Removendo
+```javascript
+$('a').click(function() {
+	$(this).toggleClass('active');
+});
+```
+
+
+### Verifica existência de classe
+O ```.hasClass()``` verifica se a classe existe e retorna um valor booleano.
+
+```javascript
+$('a').click(function() {
+	var condition = $(this).hasClass('active');
+	if (condition) {
+		console.log('possui a classe');
+	}
+});
+```
+
+### .attr()
+Pega ou define o valor de um atributo específico.
+
+```javascript
+$('a').attr('href'); // get
+$('a').attr('href', 'https://www.github.com'); // set
+
+```
+
+
+
+### .removeAttr()
+Remove atributo.
+
+```javascript
+$('img').removeAttr('src');
+```
+
+
+
+### .val()
+Pega valores, como de input e textarea.
+
+```
+// supondo que exista uma caixa de texto com uma classe de .nome e um botão de enviar com o ID de #enviar
+
+$('#enviar').on('click', function(){
+	var getNome = $('.nome').val();
+});
+```
+
+
+
+### .remove()
+Remove todos os elementos selecionados do DOM.
+
+```javascript
+$('a').remove();
+// remove todos os <a> da página
+```
+
+
+
+### .empty()
+Remove todos os elementos filhos no DOM.
+
+```javascript
+$('ul').empty();
+// removeria os <li> do <ul>
+```
+
+
+
+### .css()
+pega ou define o valor de uma propriedade CSS.
+
+```javascript
+var size = $('p').css('font-size');
+console.log(size);
+```
+
+
+É possível atribuir mais de uma propriedade.
+
+```javascript
+$('a').css({
+	'text-align': 'center',
+	'text-decoration:' 'none'
+});
+
 ```
