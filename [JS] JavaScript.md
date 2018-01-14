@@ -655,3 +655,33 @@ $('a').css({
 });
 
 ```
+
+
+
+### .offset()
+Retorna um objeto com as distâncias de top e left do elemento em relação ao documento.
+
+```javascript
+var modalOffset = $('.modal').offset(),
+modalTop = modalOffset.top
+modalLeft = modaloffset.left;
+```
+
+
+
+### .scroll()
+Saber a distância do scroll.
+```javascript
+$(window).scroll(function(){
+	var windowTop = $(this).scrollTop();
+	$('.animation').each(function() {
+		if(windowTop > $(this).offset().top) {
+			$(this).addClass('anime-init');
+		} else {
+			$(this).removeClass('anime-init');
+		}
+	});
+});
+```
+
+__each:__ pega cada elemetno na página e executa um comando
