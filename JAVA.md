@@ -10,4 +10,11 @@ Se você quiser apenas executar aplicações JAVA, o JRE atende seus requisitos.
 
 
 
-## 
+## Primeiros comandos
+```java
+public class OlaMundo {
+	public static void main(String[] args) {
+        System.out.println("Olá, mundo!");
+    }
+}
+```
