@@ -338,7 +338,7 @@ Após, só usar com script no documento HTML no ```<head>``` ou no ```<body>```.
 ### DOM: o que é?
 **Document Object Model**
 
-O DOM é como se fosse o HTML mais vivo que sofre alteração. 
+O DOM é como se fosse o HTML mais vivo que sofre alteração.
 
 
 
@@ -415,7 +415,7 @@ console.log(paragrafo); // mostra o primeiro P da página;
 ```Javascript
 $('p').html('Sou um texto novo.');
 $('h1, h2, h3').html('Modifico todos os títulos e sub-títulos da página.');
-``` 
+```
 
 
 
@@ -449,7 +449,7 @@ Adiciona conteúdo após o item selecionado.
 $('p').after('<span> * </span>');
 
 $('<span> * </span>').insertAfter('p'); // só muda a ordem
-``` 
+```
 
 
 
@@ -507,7 +507,7 @@ $('a').on('click', function(e){
 });
 ```
 
-```preventDefault()``` 
+```preventDefault()```
 :previne que seja feito o padrão daquele objeto, como por exemplo, um ```<a href="github.com">``` com ```preventDefault()``` este ```<a>``` não levaria a lugar algum ao ser clicado.
 
 Digamos que tenho um ```<a>``` linkado com uma id de uma div. Eu não quero que, ao ser clicado, a tela seja redirecionada ao div instantaneamente. Gostaria de uma animação suave com JS. Para isso, eu teria que primeiro usar o ```preventDefault()``` para tirar o evento padrão e depois criar toda a animação.
@@ -684,4 +684,4 @@ $(window).scroll(function(){
 });
 ```
 
-__each:__ pega cada elemetno na página e executa um comando
+__each:__ pega cada elemento na página e executa um comando
