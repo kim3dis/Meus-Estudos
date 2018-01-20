@@ -142,17 +142,169 @@ Podemos executar outras operações como: ```o in kim```, se "o" está em "kim";
 Usamos a função ```input()``` para capturar um input do usuário. 
 
 
+```python
+nome = input("Informe seu nome:");
+```
+
+
+O valor retornado é sempre uma string, mesmo que o usuário tenha colocado algum número. Caso não queremos que os dados inseridos não seja strings, basta adicionarmos nas as funções de conversão ```int()``` e ```float()```, e dentro dos parâmetros dessas funções, adicionar o ```input()```. Veja abaixo:
+
+```python
+idade = int(input("Insira sua idade: "))
+media = float(input("Insira sua média: "))
+```
+
+
+***
+
+## Comparações
+Python possui 8 operadores, aqui abaixo está a lista de alguns deles:
+ - < menor que; 
+ - <= menor ou igual que;
+ - > maior que;
+ - >= maior ou igual que;
+ - = igual;
+ - != não igual;
+
+Ao comparar objetos, será retornado um valor booleano: ```true``` ou ```false```.
+
+
+***
+
+## Condicionais: if, elif e else
+```if``` é um comando que avalia uma __expressão__ e escolhe um bloco para ser esxecutado de acordo com o resultado dessa avaliação (true ou false).
+
+```python
+nome = input(insira seu nome: )
+if nome == "":
+	print("você não inseriu seu nome.")
+else:
+	print("Obrigado por inserir seu nome")
+```
+
+### elif
+```elif``` avalia uma outra expressão e é executada caso esta seja verdadeira.
+
+```python
+numero = 5
+tentar = int(input("Tente acertar o número: "))
+if numero = tentar:
+	print("Parábens, você acertou.")
+elif tentar > numero:
+	print("Seu número é menor")
+
+elif tentar < numero:
+	print("Seu número é maior")
+
+else:
+	print("Isso não é um número")
+
+```
+
+
+***
+
+## Operadores lógicos
+São ```and```, ```or``` e ```not```
+```phyton
+imposto = float(input("Imposto: "))
+if imposto < 10.:
+	print("Baixo")
+elif imposto >= 10. and imposto <= 27.:
+	print("Médio")
+elif imposto > 27. and imposto < 100:
+	print("Alto")
+else:
+	print("Imposto inválido")
+```
+
+
+***
+
+## Loops
+### while
+```python
+a = 0
+b = 5
+while a < b:
+	a += 1
+	print(a)
+```
 
 
 
+***
+
+## Lista
+```python
+listas = ["world", "hello", "listas são legais", 2, 2.1]
+```
+
+As listas elas são mutáveis, logo podemos realizar atribuições em índices.
+```python
+listas = ["world", "hello", "listas são legais", 2, 2.1]
+lista[2] = "olá"
+lista[1] = "mundo"
+```
+
+O ```if``` avalia listas vazias como ```false```.
 
 
+### Percorrer listas com for
+```python
+listas = ["world", "hello", "listas são legais", 2, 2.1]
+for percorrer in lista:
+	print(percorrer)
+
+### saída ###
+# world
+# hello
+# listas são legais
+# 2
+# 2.1
+######
+```
 
 
+***
+
+## (loop) range
+```python
+for i in range(5):
+	print(i)
+
+### saída ###
+# 0
+# 1
+# 2
+# 3
+# 4
+```
 
 
+***
+
+## Enumerando coleções com for e enumerate
+
+```python
+lista = ["sou zero", "sou um"]
+for i, lista in enumarate(lista):
+	print(i, lista)
+
+### saída ###
+# 0 sou zero
+# 1	sou um
+```
 
 
+***
 
+## Funções
+Em python, funções são objetos de primeira classe, portanto, podem ser passadas como parâmetros, atribuídas a variáveis, retornar outras funções e, até mesmo, terem atributos próprios.
 
+```python
+def soma(a, b):
+	return a + b
+resultado = soma(1, 3)
+```
 <!--  -->
