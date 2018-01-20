@@ -159,12 +159,12 @@ media = float(input("Insira sua média: "))
 
 ## Comparações
 Python possui 8 operadores, aqui abaixo está a lista de alguns deles:
- - < menor que; 
- - <= menor ou igual que;
- - > maior que;
- - >= maior ou igual que;
- - = igual;
- - != não igual;
+ - ```<``` menor que; 
+ - ```<=``` menor ou igual que;
+ - ```>``` maior que;
+ - ```>=``` maior ou igual que;
+ - ```=``` igual;
+ - ```!=``` não igual;
 
 Ao comparar objetos, será retornado um valor booleano: ```true``` ou ```false```.
 
