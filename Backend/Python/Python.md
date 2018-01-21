@@ -172,7 +172,7 @@ Ao comparar objetos, será retornado um valor booleano: ```true``` ou ```false``
 ***
 
 ## Condicionais: if, elif e else
-```if``` é um comando que avalia uma __expressão__ e escolhe um bloco para ser esxecutado de acordo com o resultado dessa avaliação (true ou false).
+```if``` é um comando que avalia uma __expressão__ e escolhe um bloco para ser executado de acordo com o resultado dessa avaliação (true ou false).
 
 ```python
 nome = input(insira seu nome: )
