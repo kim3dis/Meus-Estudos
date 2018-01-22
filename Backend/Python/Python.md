@@ -2,25 +2,45 @@
 
 ## Sumário
 [Fontes usadas](#fontes-usadas)
+
 [Por que usar Python?](#por-que-usar-python?)
+
 [Qual o inconveniente?](#qual-o-inconveniente?)
+
 [Instalação](#instalação)
+
 [Variáveis e operações](#variáveis-e-operações)
+
 [Gerando números por meio de funções](#gerando-números-por-meio-de-funções)
+
 [Operadores aritméticos](#operadores-aritméticos)
+
 [type()](#type())
+
 [Multiline](#multiline)
+
 [len](#len)
+
 [Mais operações](#mais-operações)
+
 [Pegando dados](#pegando-dados)
+
 [Comparações](#comparações)
+
 [Condicionais: if, elif e else](#Condicionais:-if-elif,-e-else)
+
 [Operadores lógicos](#operadores-lógicos)
+
 [Loops](#loops)
+
 [Listas](#listas)
+
 [Range](#range)
+
 [Enumerando coleções com for e enumerate](#enumerando-coleções-com-for-e-enumerate)
+
 [Funções](#funções)
+
 [Orientação a objetos](#orientação-a-objetos)
 
 
