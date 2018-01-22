@@ -49,6 +49,8 @@
 ## Fontes usadas
 #### Livros
 #### Vídeos
+Udemy: Python Scrapy: Capture Dados Web
+
 #### Tópicos na internet
 
 ## Por que usar Python?
@@ -411,3 +413,27 @@ arquivo.close()
 
 
 ## Orientação a objetos
+
+```python
+class Robo(object):
+	def __init___(self, x, y):
+		self.x = x
+		self.y = y
+
+robo1 = Robo(5, 5)
+
+class Robo3D(Robo):
+	def __init__(self, x, y, z):
+		super(Robo3D, self).__init__(x, y) # herdar da primeira classe
+		self.z = z
+
+robo 2 = robo3D(5, 6, 8)
+```
+
+>A classe Robo herda de object
+
+> ```def __init__(self):``` é um construtor ou inicializador, tem a função de inicializar a instância. Este 'self' poderia ser qualquer nome. Ele é a instância atual.
+
+>Nunca é preciso dar o valor de ```self```.
+
+>
