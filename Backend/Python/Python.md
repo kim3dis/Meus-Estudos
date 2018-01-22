@@ -1,6 +1,27 @@
 # Python
 
 ## Sumário
+[Fontes usadas](#fontes-usadas)
+[Por que usar Python?](#por-que-usar-python?)
+[Qual o inconveniente?](#qual-o-inconveniente?)
+[Instalação](#instalação)
+[Variáveis e operações](#variáveis-e-operações)
+[Gerando números por meio de funções](#gerando-números-por-meio-de-funções)
+[Operadores aritméticos](#operadores-aritméticos)
+[type()](#type())
+[Multiline](#multiline)
+[len](#len)
+[Mais operações](#mais-operações)
+[Pegando dados](#pegando-dados)
+[Comparações](#comparações)
+[Condicionais: if, elif e else](#Condicionais:-if-elif,-e-else)
+[Operadores lógicos](#operadores-lógicos)
+[Loops](#loops)
+[Listas](#listas)
+[Range](#range)
+[Enumerando coleções com for e enumerate](#enumerando-coleções-com-for-e-enumerate)
+[Funções](#funções)
+[Orientação a objetos](#orientação-a-objetos)
 
 
 ***
@@ -93,7 +114,7 @@ type(4.0) // retorna: <type 'float'>
 
 ***
 
-## (multiline) Formatação de saída
+## multiline
 Com três aspas simples ou duplas podemos criar uma multiline. Ela é muito empregada em formatação de saída de console.
 
 ```Python
@@ -107,7 +128,7 @@ Uso: programa [opção]
 
 ***
 
-## len()
+## len
 Para saber o tamanho de uma string (palavras), usamos ```len(string)```.
 
 ```Python
@@ -138,7 +159,7 @@ Podemos executar outras operações como: ```o in kim```, se "o" está em "kim";
 
 ***
 
-## Pegando dados no terminal
+## Pegando dados
 Usamos a função ```input()``` para capturar um input do usuário. 
 
 
@@ -268,7 +289,7 @@ for percorrer in lista:
 
 ***
 
-## (loop) range
+## range
 ```python
 for i in range(5):
 	print(i)
@@ -311,4 +332,62 @@ resultado = soma(1, 3)
 
 ***
 
-## 
+### Manipulação de arquivos
+Para criar arquivos, utiliza-se o ```open()```, dentro dos paramêtros informamos o nome do arquivo seguido de sua extensão. Conseguimos inserir mais um paramêtro para dizer o modo do arquivo.
+
+```python
+contatos = open('contatos.csv', 'w') # w é de escrita, 'write'
+```
+> No segundo paramêtro, existem mais duas opção para o 'w', que é o 'wt' e o 'wb'. O 'wt' é escrita de texto, o 'wb' é escrita binária. Se não houver especificação, como foi o caso a cima, ele entenderá que é escrita com texto (wt) por padrão.
+
+
+
+Para escrever, usa-se o ```write()```.
+
+```python
+# linha a cima, contato = open(...)
+contatos.write('%s, %s, %s' %(nome, email, telefone))
+```
+
+
+Hora de sair e fechar o arquivo:
+```python
+# os dois comandos a cima ...
+
+contatos.flush()
+contatos.close()
+```
+
+> Se for tudo declarado desta maneira, o arquivo será criado na mesma pasta do arquivo python.
+
+
+### Ler o arquivo
+Tudo certo, mas e para ler?
+Só usar o modo de leitura:
+
+```python
+contatos = open('contatos.csv')
+print(contatos.read())
+contatos.close()
+```
+***
+
+Na primeira linha abrimos o arquivo. Se não adicionarmos um modo, por padrão, ele abrirá como modo de leitura, 'r' (read).
+Já na segunda linha, chamamos a função read() e pedimos para printar o que tem dentro do arquivo.
+E na última, fechamos o arquivo.
+
+
+### Continuar a escrever
+Se escrevermos no arquivo, salvar e tentar escrever algo utilizando os códigos acima veremos que ele sobrescreveu os dados antigos. E talvez não seja isso que queremos em determinadas vezes. A solução é usar no modo o 'a' ao invés do 'w'.
+
+```python
+contatos = open('contatos.csv', 'a')
+contatos.write('\n Não sobrescrevo mais o arquivo. c:')
+arquivo.flush()
+arquivo.close()
+```
+
+> O \n é somente para escrever na linha de baixo.
+
+
+## Orientação a objetos
