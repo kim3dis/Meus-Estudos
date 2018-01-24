@@ -33,7 +33,7 @@ pip3 install pyautogui
 
 ***
 
-## import 
+## import
 ```python
 import pyautogui
 ```
@@ -132,7 +132,96 @@ pyautogui.click(clicks=2)
 pyautogui.click(clicks=1, interval=0.50) #pode se adicionar um intervalo entre os clicks também
 ```
 
-#### doubleClick e tripleClick()
+### doubleClick e tripleClick
 ```python
 pyautogui.doubleClick()
 ```
+
+
+
+### Mouse Scrolling
+Essa função ativa o scroll do mouse.
+
+```python
+pyautogui.scroll(10)  # scroll-up 10 "clicks"
+pyautogui.scroll(-10)  # scroll-down 10 "clicks"
+pyautogui.scroll(10 x=100, y=-100)  # move mouse cursor to 100, 200, then scroll up 10 "clicks"
+```
+
+
+### typewrite
+Essa função escreve os caracteres passados no paramêtro.
+
+```python
+pyautogui.typewrite('Hello, world!')
+pyautogui.typewrite('Hello, world!', interval=0.25)
+```
+
+
+### press, keyDown e keyUp
+A função press pressiona um tecla do teclado.
+
+```python
+pyautogui.press("enter") # pressiona a tecla enter
+pyautogui.press('f1') # pressiona a tecla f1
+```
+```python
+pyautogui.keyDown('shift') #fica pressionado a tecla
+pyautogui.keyUp("shift") #solta a tecla
+```
+
+
+### hotkey
+Essa função pressiona hotkeys ou algum atalho do teclado.
+
+```python
+pyautogui.hotkey('ctrl', 'alt', 'del')
+```
+Esse código é o esquivalente de:
+
+```python
+pyautogui.keyDown('ctrl')
+pyautogui.keyDown('alt')
+pyautogui.keyDown('del')
+pyautogui.keyUp('ctrl')
+pyautogui.keyUp('alt')
+pyautogui.keyUp('del')
+```
+
+
+### Teclas validas
+As seguintes teclas são válidas para ser passadas em ```pres()```, ```keyDown()```, ```keyUp()``` e ```hotkey()```.
+
+
+### Mensagem Box
+#### Alerta
+Cria um alerta.
+
+```python
+alert("Alerta!")
+alert(text='Sou um alerta', title='Título', button='OK')
+```
+
+#### confirmar
+Cria uma caixa de mensagem com botão de OK e cancelar. Os números e textos podem ser customizados.
+
+```python
+confirm(text='Me confirma', title='Confirme', buttons=['Confirmar', 'Cancelar'])
+```
+
+#### prompt
+Cria uma caixa de mensagem com entrada de texto, e botões de OK e cancelar.
+
+```python
+prompt(text='', title='' , default='')
+```
+
+#### password
+Cria uma caixa de mensagem com entrada de texto para senhas, e botões de OK e cancelar.
+
+```python
+password(text='', title='', default='', mask='*')
+```
+
+
+<!--  -->
