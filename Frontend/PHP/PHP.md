@@ -2,7 +2,7 @@
 
 ## Sumário
 [Instalação](#instalação)
-
+[Hello World!](#hello-world!)
 [Funções para sessões](#funções-para-sessões)
 [Funções de usuário](#funções-de-usuário)
 
@@ -25,7 +25,18 @@ Para entrar no servidor basta acessar no browser:
 - 127.0.0.1
 ***
 
-## 
+## Hello World!
+Para imprimir algo na tela, basta usar o comando ```echo``` ou ```print()```
+
+```php
+<?php
+echo "Hello, World!"; // imprime Hello, World!
+print("Hello, World!"); // também imprime Hello, World!
+?>
+```
+
+
+
 
 
 ***
