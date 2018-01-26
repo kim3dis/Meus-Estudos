@@ -31,7 +31,7 @@ int idade;
 ```
 
 
-Com isso, foi declarado a variável ```idade```, que passa a existir a partir daquela linha. 
+Com isso, foi declarado a variável ```idade```, que passa a existir a partir daquela linha.
 
 ```java
 // a linha a seguir é uma tradução de: "idade deve valer quinze".
@@ -209,7 +209,7 @@ minhaConta.dono = "kim";
 minhaConta.saldo = 800.0;
 
 System.out.println("Saldo atual: " + minhaConta.saldo);
-``` 
+```
 
 ### Métodos
 Dentro da classe, também declararemos o que cada conta faz e como isto é feito - os comportamentos que cada classe tem, isto é, o que ela faz.
@@ -230,7 +230,7 @@ class Conta {
 
 A palavra chave ```void``` diz que, quando você pedir para a conta sacar uma quantia, nenhuma informação será enviada de volta a quem pediu.
 
-Quando alguém pedir para sacar, ele também vai dizer quanto quer sacar. Por isso precisamos declarar o método com algo dentro dos parênteses - o que vai aí dentro é chamado de argumento do método (ou parâmetro). Essa variável é uma variável comum, chamada também de temporária ou local, pois, ao final da execução desse método, ela deixa de existir.
+Quando alguém pedir para sacar, ele também vai dizer quanto quer sacar. Por isso precisamos declarar o método com algo dentro dos parênteses - o que vai aí dentro é chamado de argumento do método (ou parâmetro). Essa variável é uma variável comum, chamada também de temporária ou local, pois, ao final da execução desse método, ela deixa de existir.
 
 
 ## Arrays
@@ -270,6 +270,39 @@ class Conta {
 
 ```
 
-```private``` é um modicador de acesso (também chamado de modicador de visibilidade).
+```private``` é um modificador de acesso (também chamado de modificador de visibilidade).
 
-Marcando um atributo como privado, fechamos o acesso ao mesmo em relação a todas as outras classes
+Marcando um atributo como privado, fechamos o acesso ao mesmo em relação a todas as outras classes.
+
+
+
+
+### Getters e Setters
+O private faz com que ninguém consiga modificar, nem mesmo ler, o atributo em questão.
+Com isso temos um problema: como fazer para mostrar o saldo de uma Conta, já que nem mesmo podemos acessá-lo para leitura?
+
+
+```java
+
+class Conta {
+	
+	//...
+	private double saldo;
+	//...
+
+	public double pegaSaldo() {
+		return this.saldo;
+	}
+
+}
+
+```
+
+Para permitir o acesso aos atributos (já que eles são private) de uma maneira controlada, a prática mais comum é criar dois métodos, um que retorna o valor (get) e o outro que muda o valor (set).
+
+É uma má prática criar classe e, logo em seguida, criar getters e setters para todos os seus atributos. Você só deve criar um getter ou setter se tiver a real necessidade.
+
+
+
+### Construtores
+Quando usamos a palavra chave ```new```, estamos construindo um objeto. Sempre quando o ```new``` é chamado, ele executa o construtor da classe. O construtor da classe é um bloco declarado com o mesmo nome que a classe.
