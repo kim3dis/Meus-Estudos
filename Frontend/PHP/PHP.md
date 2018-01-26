@@ -1,10 +1,10 @@
 # PHP
 
 ## Sumário
-[Instalação](#instalação)
-[Hello World!](#hello-world!)
-[Funções para sessões](#funções-para-sessões)
-[Funções de usuário](#funções-de-usuário)
+- [Instalação](#instalação)
+- [Hello World!](#hello-world!)
+- [Funções para sessões](#funções-para-sessões)
+- [Funções de usuário](#funções-de-usuário)
 
 
 ## Instalação
@@ -18,6 +18,7 @@ __Windows:__
 Basta instalar algum WAMP (Windows: Apache + MySQL + PHP).
 
 >O nome do arquivo de configurações do apache é: httpd.conf
+
 >O do php é: php.ini
 
 Para entrar no servidor basta acessar no browser:
