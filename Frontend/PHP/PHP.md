@@ -17,10 +17,12 @@ __Windows:__
 
 Basta instalar algum WAMP (Windows: Apache + MySQL + PHP).
 
-> O nome do arquivo de configurações do apache é: httpd.conf
-> O do php é: php.ini
+>O nome do arquivo de configurações do apache é: httpd.conf
+>O do php é: php.ini
 
-
+Para entrar no servidor basta acessar no browser:
+- localhost/
+- 127.0.0.1
 ***
 
 ## 
