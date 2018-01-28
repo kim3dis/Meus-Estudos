@@ -37,7 +37,69 @@ print("Hello, World!"); // também imprime Hello, World!
 ```
 
 
+***
 
+## Git
+Git: Controle de versão.
+
+### Instalando o Git
+
+__Windows:__ Basta acessar o site do [git](https://www.git-scm.com) e instalar.
+
+__Linux:__ Já vem instalado.
+
+
+### Clonar
+Para clonar um projeto, digite no terminal:
+```bash
+git clone link
+```
+
+
+### Criar repositório
+
+Para iniciar um repositório vazio em uma determinada pasta, basta digitar o comando abaixo no terminal:
+
+```bash
+git init
+```
+
+Para adicionar as pastas ao Stage Area (lista de espera), que é um, area de espera ou log de confirmação (commit).
+
+```bash
+git add .
+```
+>o "." significa para adicionar todos os arquivos alterados. Também podemos usar o --all para assionar a mesma função.
+
+
+Para confirmar, utilizamos o commit (confirmação).
+```bash
+git commit -m "mensagem"
+```
+
+>O -m é de mensagem
+
+Precisamos enviar ou empurrar para o servidor.
+```bash
+git remote add origin [link do repositório]
+git push origin master
+```
+
+Precisamos também fazer as configurações de usuário:
+```bash
+git config --global user.name "kim3dis"
+git config --global user.email "kim3dis@gmail.com"
+
+```
+
+### GitHub vs. BitBucket
+O github é como se fosse uma rede social de desenvolvedores. A casa do desenvolvedor.
+O BitBucket é mais voltado para empresas.
+
+
+***
+
+## Array
 
 
 ***
