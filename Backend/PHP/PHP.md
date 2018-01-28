@@ -79,6 +79,24 @@ git commit -m "mensagem"
 
 >O -m é de mensagem
 
+Antes de mais nada, precisa-se criar uma chave SSH para fazer a conexão com o github.
+```bash
+cd ~/.ssh
+ssh-keygen
+```
+Dê enter para as 3 perguntas sequentes.
+O que estamos procurando é um arquivo .pub chamado **id_rs**. Abra-o com um editor de texto e copie tudo que se encontra dentro:
+
+```bash
+ls
+gedit id_rsa.pub
+```
+
+Agora basta ir nas configurações de perfil e [SSH and GPG keys](https://github.com/settings/keys), New SSH key e colar a key.
+
+Tudo pronto, só falta dá um ```git push```.
+
+
 Precisamos enviar ou empurrar para o servidor.
 ```bash
 git remote add origin [link do repositório]
@@ -91,6 +109,9 @@ git config --global user.name "kim3dis"
 git config --global user.email "kim3dis@gmail.com"
 
 ```
+
+
+
 
 ### GitHub vs. BitBucket
 O github é como se fosse uma rede social de desenvolvedores. A casa do desenvolvedor.
