@@ -100,6 +100,55 @@ O BitBucket é mais voltado para empresas.
 ***
 
 ## Array
+Umas das formas mais simples de se criar:
+
+```php
+$frutas = array("laranja", "abacaxi", "melancia");
+print_r($frutas);
+```
+>Exibe o array e sua estrutura.
+>Todo array inicia em 0
+>Quando o array só tem uma dimensão, ele é um vetor.
+
+
+Exemplo de array bidimiensional:
+```php
+$carros[0][0] = "GM";
+$carros[0][1] = "Cobalt";
+$carros[0][2] = "Onix";
+$carros[0][3] = "Camaro";
+
+$carros[1][0] = "Ford";
+$carros[1][1] = "Fiesta";
+$carros[1][2] = "Fusion";
+$carros[1][3] = "Eco Sport";
+
+echo $carros[0][3]; // imprime: Camaro
+
+echo end($carros[1]); // imprime: Eco Sport 
+
+```
+
+
+```php
+$pessoas = array();
+
+array_push($pessoas, array(
+	'nome'=>'kim',
+	'idade'=>55
+));
+
+array_push($pessoas, array(
+	'nome'=>'mik',
+	'idade'=>55
+));
+
+print_r($pessoas); // imprime a estrutura do array pessoas
+print_r($pessoas[0]); //devolve o array 0
+print_r($pessoas[1]["nome"]); //devolve o nome que está no array 1
+
+```
+
 
 
 ***
