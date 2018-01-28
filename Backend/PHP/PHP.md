@@ -85,7 +85,7 @@ cd ~/.ssh
 ssh-keygen
 ```
 Dê enter para as 3 perguntas sequentes.
-O que estamos procurando é um arquivo .pub chamado **id_rs**. Abra-o com um editor de texto e copie tudo que se encontra dentro:
+O que estamos procurando é um arquivo .pub chamado **id_rs**. Abra-o com um editor de texto e copie tudo que se encontra dentro ou abra no terminal com ```cat```:
 
 ```bash
 ls
@@ -116,6 +116,18 @@ git config --global user.email "kim3dis@gmail.com"
 ### GitHub vs. BitBucket
 O github é como se fosse uma rede social de desenvolvedores. A casa do desenvolvedor.
 O BitBucket é mais voltado para empresas.
+
+
+***
+
+## Variáveis
+Variáveis são espaços de memória no computador que possuem algum valor.
+
+```php
+$nome = "kim3dis"; //string
+$idade = 55; //int
+$estudante = true; //boolean
+```
 
 
 ***
