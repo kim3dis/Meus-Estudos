@@ -129,6 +129,63 @@ $idade = 55; //int
 $estudante = true; //boolean
 ```
 
+### Apagar variáveis
+```php
+$var1 = 1;
+$var2 = 2;
+unset($var1, $var2); //as duas variáveis deixam de existir
+```
+
+### Saber se a variável existe ou está definida
+
+```php
+if(isset($nome1)){
+	print("Existe!");
+} else {
+	print("Não existe!");
+}
+
+```
+
+### Concatenar variáveis
+Basta adicionar um ponto no meio das duas.
+
+```php
+$primeiroNome = "kim";
+$segundoNome = "3dis";
+
+$nomeCompleto = $primeiroNome . $segundoNome; // junta as duas strings, 
+```
+
+
+***
+
+## Tipos de dados
+Temos, no PHP, 8 tipos de dados primitivos divido em 3 grupos.
+
+__Tipos básicos:__  int, string, float e boolean.
+
+__Tipos compostos:__ Array e objetos.
+
+__Tipos especiais:__ resource e null.
+
+
+```php
+$nome = "kim"; // string
+$idade = 55; // int
+$dinheiro = 0.10; // float
+$estudante = true; // boolean
+//////////////////////////////
+$frutas = array("abacaxi", "laranja", "maçã"); // array
+$nascimento = new DateTime(); // object
+//////////////////////////////
+$arquivo = fopen("exemplo.txt", "r"); // resource
+$nulo = NULL; // null
+```
+
+>Nulo é a ausência de valor. Não existe; No vazio, ele foi iniciado. Só não tem informação. Já está reservado na memória.
+>Quando se destrói uma variável ela vira null.
+
 
 ***
 
@@ -163,6 +220,7 @@ echo end($carros[1]); // imprime: Eco Sport
 ```
 
 
+### Adicionar item na lista
 ```php
 $pessoas = array();
 
