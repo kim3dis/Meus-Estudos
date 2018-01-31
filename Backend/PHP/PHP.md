@@ -241,6 +241,14 @@ print_r($pessoas[1]["nome"]); //devolve o nome que está no array 1
 ```
 
 
+***
+
+## Variáveis pré-definidas
+São também conhecidas como arrays super globais ou variáveis pré-definidas do PHP que já vem com algum recurso. Possuem informações externas até informações internas do ambiente. 
+
+Os valores recebidos por ```$_GET````ou ```$_POST``` são sempre strings. Se quisermos receber um int ou float, teriamos que converter (casting).
+
+$ip = $_SERVER["REMOTE_ADDR"];
 
 ***
 
