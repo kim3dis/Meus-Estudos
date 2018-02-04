@@ -246,12 +246,80 @@ print_r($pessoas[1]["nome"]); //devolve o nome que está no array 1
 ## Variáveis pré-definidas
 São também conhecidas como arrays super globais ou variáveis pré-definidas do PHP que já vem com algum recurso. Possuem informações externas até informações internas do ambiente. 
 
-Os valores recebidos por ```$_GET```ou ```$_POST``` são sempre strings. Se quisermos receber um int ou float, teriamos que converter (casting).
+Os valores recebidos por ```$_GET``` ou ```$_POST``` são sempre strings. Se quisermos receber um int ou float, teriamos que converter (casting).
 
 ```php
 $ip = $_SERVER["REMOTE_ADDR"];
 print($ip);
 ```
+
+***
+
+## Escopo de variáveis
+__Escopo de variáveis:__ Até onde essa variável será enxergada.
+
+Quando cria-se uma variável, o escopo dela se chama "escopo local", essa variável só existe naquele arquivo que ela foi criada.
+
+
+```php
+$nome = "kim";
+
+function retNome() {
+	global $nome;
+	echo $nome;
+}
+
+function retNome2() {
+	echo $nome(); // erro
+}
+
+retNome();
+retNome2();
+```
+>Para você ouvir globalmente a variável nome, usasse o ```global```. Assim, a variável que está fora do escopo passa a ser acessível dentro.
+
+Por mais que variáveis sejam criadas com o mesmo nome, mas em escopos diferentes, elas são diferentes entre sim por estarem em escopos diferentes. Sendo assim, se alterar o valor de uma, não afeta outra. Exemplo:
+
+
+```php
+$nome = "kim";
+
+function trocarNome() {
+	$nome = "mik";
+}
+
+trocarNome();
+echo $nome;
+```
+
+
+***
+
+## Operadores
+
+```php
+$soma = 5+5;
+$subtracao = 5-5;
+$multiplicacao = 5*5;
+$divisao = 5/5;
+```
+
+```php
+
+$atribuir = 30;
+
+if (30 == $atribuir) {
+	echo 'comparação de valores';
+}
+
+a = 30.0;
+
+if (a === $atribuir) {
+	echo 'comparação de valores e tipos';
+}
+
+```
+
 
 ***
 
@@ -274,3 +342,37 @@ Mostrar o local em que fica salvo os arquivos da sessão:
 ```PHP
 session_save_path();
 ```
+
+
+***
+
+## MySQL
+
+### Criando o banco de dados
+Utilizando o MySQL Workbench, na tela inicial, localizei o sinal de "+" para criar o banco, adicione o nome e, se preferir, adicione uma outra senha da padrão.
+
+Abra o banco de dados, e crie um novo schema na barra de ferramenta. 
+
+
+### Selecionando o banco de dados
+Para selecionar o bando, selecione-o na esquerda.
+
+Tenha certeza que você está dentro do banco correto com:
+
+```MySQL
+USE nomeBanco;
+```
+>Execute o comando com ctrl+enter ou clique no raio a cima
+
+
+### Tabela
+```MySQL
+CREATE TABLE tb_usuarios (
+idusuario INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+deslogin VARCHAR(64) NOT NULL,
+desenha VARCHAR(256) NOT NULL
+);
+```
+
+
+***
