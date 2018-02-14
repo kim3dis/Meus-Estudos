@@ -370,9 +370,164 @@ USE nomeBanco;
 CREATE TABLE tb_usuarios (
 idusuario INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 deslogin VARCHAR(64) NOT NULL,
-desenha VARCHAR(256) NOT NULL
+dessenha VARCHAR(256) NOT NULL
+dtcadastro TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP()
 );
+```
+>nome TIPO
+>NOT NULL = não permite nulo
+>No MYSQL só permite um TIMESTAMP por tabela
+
+#### Inserir usuários
+
+```mysql
+INSERT INTO tb_usuarios(deslogin, dessenha) VALUES('root', 'fff');
+```
+
+### Selecionar tabela
+
+```mysql
+SELECT * FROM tb_usuarios;
+```
+
+### Atualizar dados
+```mysql
+UPTADE tb_usuarios SET dessenha = '123456' WHERE idusuario = 1;
+```
+
+#### Safe updates
+Pode acontecer de você querer atualizar a tabela e acontecer um erro, verifique em edit > preferences > SQL Editor se Safe Updates está ativo.
+apos isso, você terá que reiniciar a conexão.
+
+
+### Deletar dados
+```mysql
+delete from tb_usuarios where idusuario = 1;
+```
+Acontece que se esse comando for executado nessa tabela, ele deixará rastros, ou seja, quando for criado outros dados na tabela, ele pulará do idusuario 1 para o 2. O ```delete``` não apaga o auto_increment. Para você formatar essa tabela, precisará de um outro comando:
+
+```mysql
+truncate table tb_usuarios;
+```
+***
+
+
+## Conexão PHP e MySQL
+
+```php
+// criar classe para conexão com paramêtros de acesso ao servidor: Local do server, usuário, senha e o banco de dados
+$conn = new mysqli("localhost", "user", "pass", "dbphp");
+
 ```
 
 
-***
+Pode ser que aconteça algum erro na conexão, mas podemos __tratar esse erro__.
+```php
+if ($conn->connect_error) {
+	echo "Erro: " . $conn->connect_error;
+}
+```
+
+Agora precisamos fazer a inserção pelo php.
+```php
+//prepare() é um método para preparar um comando que queira enviar para o banco de dados.
+$stmt = $conn->prepare("INSERT INTO tb_usuarios (deslogin, dessenha) VALUES(?,?)"); // as interrogações serão trocadas pelos valores
+
+$stmt->bind_param("ss", $login, $pass); // esse método espera os tipos de dados das interrogações a cima. o ss significa duas Strings. Por fim, precisamos inserir os valores das interrogações.
+
+//atribuindo os valores acima
+$login = 'user';
+$pass = '12345';
+
+
+$stmt->execute(); //Os comandos a cima nenhum foram executados, precisamos deste método para executá-los
+
+
+//Não há necessidade de fazer tudo de novo para inserir um outro dado na tabela, basta atribuir um novo valor nas variáveis que ocupam a interrogação e executar novamente.
+$login = "user2";
+$pass = "54321";
+
+$stmt->execute();
+
+
+
+```
+
+>Não há problemas em atribuir os valores nas variáveis depois de tê-la chamado, pois o código acima é um prepared statement.
+
+Após isso seria inserido o dados na tabela do MySQL.
+
+
+### Mostrar valores do banco
+
+```php
+//conectar ao banco
+$conn = new mysqli("localhost", "user", "pass", "dbphp");
+
+$result = $conn->query("SELECT * FROM tb_usuarios ORDER BY deslogin") // seleciona todas as colunas da tabela ordenado pelo deslogin
+
+
+// usaremos o fetch_array() para retornar um dado se ele existir
+// enquanto você olhar para o banco e tiver resultados, armazene na variável $row
+while($row = $result->fetch_array()) { 
+	
+	var_dump($row);
+
+}
+
+
+
+```
+
+Caso quisermos somente as strings dos dados, usamos algum dos dois métodos abaixo:
+```php
+fetch_array(MYSQLI_ASSOC);
+fetch_assoc();
+```
+
+
+### Gerando JSON do banco de dados
+Também podemos usar esses dados em outras aplicações usando o JSON. Basta passar os dados por array.
+```php
+//...
+
+$data = array();
+
+while($row = $result->fetch_array()) { 
+	
+	array_push($data, $row);
+
+}
+
+echo json_encode($data);
+
+```
+
+## Banco de dados com PDO
+```php
+
+$conn = new PDO("mysql:dbname=dbphp7;host=localhost", "user", "pass");
+
+$stmt = $conn-prepare("SELECT * FROM tb_usuarios ORDER BY deslogin");
+
+$stmt->execute();
+
+$results = $stmt->fetchAll(PDO::FETCH_ASSOC); //fetchAll() fatia todas as linhas
+
+var_dump($results);
+
+```
+
+Para navegar usamos o foreach.
+```php
+foreach ($result as $row) {
+	// key seria o nome da coluna; value seria o valor;
+	foreach ($row as $key => $value) {
+		echo "<b>" .$key. ":</b>" .$value. "<br/>" 
+
+	}
+
+	echo "======================"
+
+}
+```
