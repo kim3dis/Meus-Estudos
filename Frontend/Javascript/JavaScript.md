@@ -342,3 +342,36 @@ class Carro {
 	
 ```
 
+
+
+***
+
+### Manipulando DOM
+>Document Object Model
+
+```javascript
+class Carro {
+	constructor(){
+		this._nomeCarro = "unknown";
+		this._motor;
+		this._initialize(); // +
+	}
+
+	// +
+	initialize(){
+		let algumID = document.querySelector("#nomeCarro");
+
+		algumID.innerHTML = "Mustang GT";
+	}
+
+	get nomeCarro() {
+		return this._nomeCarro;
+	}
+	set nomeCarro(value) {
+		return this._nomeCarro = value;
+	}
+}
+
+	
+```
+
