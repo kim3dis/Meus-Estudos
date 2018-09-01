@@ -1,10 +1,3 @@
-# jQuery
-jQuery é uma biblioteca de JavaScript. Que facilita a manipulação do DOM.
-! __DOM:__ É tipo o HTML final do site, que a gente consegue ver nas ferramentas ali de desenvolvedor do browser.
-
-Um código utilizando só JavaScript é bem maior do que um código jQuery.
-
-
 ## Sumário
 - [Variáveis e Constantes](#variáveis-e-constantes)
 - [Arrays](#arrays)
@@ -12,8 +5,7 @@ Um código utilizando só JavaScript é bem maior do que um código jQuery.
 - [Function](#function)
 - [Loop](#loop)
 - [Objetos](#objetos)
-
-- [jQuery](#jquery)
+- [Orientação a objetos](#orientação-a-objetos)
 
 ## Variáveis e Constantes
 ```Javascript
@@ -214,6 +206,20 @@ var custoCarro = function(portas) {
 console.log(custoCarro());
 ```
 
+```Javascript
+(function(x1, x2, operador){
+	return eval('${x1} ${operador} ${x2}');
+})(2, 2, "*");
+```
+
+
+### Arrow Function
+
+```javascript
+let calc = (x1, x2, operador) => {
+	return eval('${x1} ${operador} ${x2}');
+}
+```
 
 
 ***
