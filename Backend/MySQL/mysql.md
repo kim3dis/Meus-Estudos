@@ -2,6 +2,7 @@
 Fontes utilizadas:
 - Curso em vídeo: Curso de MySQL;
 - Udemy: PHP;
+- Learning PHP, MySQL, Javascript and CSS [Robin Nixon]
 
 >Arquivos guardam tabelas; tabelas armazenam registros; registros são compostos por campos;
 
@@ -50,7 +51,7 @@ __Lógico:__ Bit, Boolean;
 
 #### Literal:
 __Caractere:__ char e varchar;
-A diferença entre os dois é que o **char** guarda caracteres fixos e o **varchar** guarda os variantes.
+A diferença entre os dois é que o **char** guarda caracteres fixos e o **varchar** guarda os variantes;
 __Texto:__ TinyText, Text, MediumText, LongText;
 __Binário:__ TinyBlob, Blob, MediumBlob, LongBlob;
 __Coleção:__ Enum e Set;
@@ -85,10 +86,24 @@ Para inserir basta usar dois comandos: ```INSERT INTO nomeTabela()``` e ```VALUE
 INSERT INTO pessoas (nome, nascimento, sexo, peso, altura, nacionalidade) VALUES ('kim', '1500-01-01', 'M', '30.4', '3.90', 'Portugal');
 ```
 
+```mysql
+UPTADE tb_usuarios SET dessenha = '123456' WHERE idusuario = 1;
+```
+
+
+# SELECT
 Para visualizar usamos o ```SELECT * FROM nomeTabela```.
 >O * representa "tudo" na tabela
 ```mysql
 SELECT * FROM pessoas;
+```
+
+
+# SELECT DISTINCT
+Como o nome já diz, seleciona apenas linhas distintas, ou seja, linhas que se diferem / que não são iguais.
+
+```mysql
+SELECT DISTINCT FROM pessoas;
 ```
 
 
@@ -104,6 +119,16 @@ INSERT INTO pessoas VALUES (DEFAULT, 'João', '1730-12-18', 'M', '80.6', '1.60',
 (DEFAULT, 'Adalberto', '1790-10-24', 'M', '88.2', '1.84', 'Brasil'),
 (DEFAULT, 'Maria', '1840-8-1', 'F', '65', '2', 'Alemanha');
 ```
+
+# LIMIT
+O ```LIMIT``` deixa você escolher quantas linhas retornarão na query e/ou de onde iniciar.
+
+```mysql
+SELECT nome FROM pessoas LIMIT 3;
+SELECT nome FROM pessoas LIMIT 2, 3;
+```
+>Quando dado 2 parametros, o primeiro significa: pule este número de resultados; o segundo é quanto após pular devem ser retornados.
+
 
 # Alterar a estrutura da tabela
 ## Adicionar colunas

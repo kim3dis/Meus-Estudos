@@ -413,7 +413,6 @@ truncate table tb_usuarios;
 
 
 ## Conexão PHP e MySQL
-
 ```php
 // criar classe para conexão com paramêtros de acesso ao servidor: Local do server, usuário, senha e o banco de dados
 $conn = new mysqli("localhost", "user", "pass", "dbphp");
@@ -456,6 +455,38 @@ $stmt->execute();
 >Não há problemas em atribuir os valores nas variáveis depois de tê-la chamado, pois o código acima é um prepared statement.
 
 Após isso seria inserido o dados na tabela do MySQL.
+
+
+## Conexão PHPe MySQL 2
+
+```php
+<?php // connect.php
+$db_hostname = "localhost";
+$db_username = "user";
+$db_password = "pass";
+$db_database = "dbphp";
+
+$db_server = mysql_connect($db_hostname, $db_username, $db_password);
+
+
+//selecionar o banco de dados
+mysql_select_db($db_database) or die("Banco de dados indisponível: " . mysql_error());
+
+$query = "SELECT * FROM pessoas";
+$result = mysql_query($query);
+
+if (!result) die ("Acesso indisponível: " . mysql_error());
+
+$rows = mysql_num_rows($result);
+for ($i=0; $i < $rows; $i++) { 
+	echo "Nome:" . mysql_result($result, $i, "nome" . "<br>");
+	echo "Idade:" . mysql_result($result, $i, "idade") . "<br><br>";
+}
+
+
+?>
+
+```
 
 
 ### Mostrar valores do banco
@@ -530,4 +561,32 @@ foreach ($result as $row) {
 	echo "======================"
 
 }
+```
+
+
+## Cookies, sessões e autentificação
+### Cookies
+Um cookie é uma informação de um web server salvo no seu computador. Ele pode ser requerido do seu computador e retornar ao servidor.
+Cookies somente podem ser lidos de seus domínios de emissão. Por exemplo, se um cookie é domínio do github.com, ele só poderá retornar para esse domínio. Isso impede que outros sites ganhe acesso a detalhes não autorizado.
+
+#### Configurando um cookie
+Você pode utilizar a função ```setcookie()```.
+
+```php
+setcookie(name, value, expire, path, domain, secure, httponly);
+```
+
+A tabela abaixo tem os parametros de ```setcookie();```.
+![Tabela com valores](https://i.imgur.com/uWs5Jsz.png)
+
+Então, para criar um cookie com o nome **username** e um valor "kim3dis" e por sete dias, use o seguinte:
+```php
+setcookie("username", "kim3dis", time() + 60 * 60 * 24 * 7, "/");
+```
+
+#### Acessando um cookie
+Ler um valor de um cookie é simples, basta usar ```$_COOKIE```.
+
+```php
+if(isset($_COOKIE['username'])) $db_username = $_COOKIE['username'];
 ```
