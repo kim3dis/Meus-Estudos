@@ -42,9 +42,28 @@ Gerenciador de pacotes JS.
 sudo apt install npm
 ```
 
+No arquivo do projeto, rode o seguinte comando. Dê enter até finalizar e gerar o arquivo _package.json_.
+```bash
+npm init
+```
 
 ### Express
 Framework nodejs para aplicações web.
+#### Instalação
+```bash
+npm install express -save
+```
+>```-save``` o express vai junto com o projeto
+
+#### refactoring do projeto
+Crie /app.js
+```javascript
+// FILE: app.js
+
+var express = require('express');
+```
+>O módulo express
+
 
 ### EJS (<%= Embedded JavaScript %>)
 Linguagem de modelagem utilizando JS para criar páginas HTML.
