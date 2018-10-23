@@ -8,7 +8,6 @@
 var http = require('http'); // incorporando a lib http
 
 http.createServer(function(req, res){
-	res.end("<meta charset='utf-8'");
 	res.end("<h1>Essa é a minha resposta!</h1>");
 }).listen(3000); 
 ```
@@ -27,7 +26,7 @@ http.createServer(function(req, res){
 		res.end("<h1>Essa é a minha resposta!</h1>");
 		console.log(req.url);
 	} else {
-		res.end("<h1>Oops, dont worry. <br>We not found this page, but you can try again.</h1>");
+		res.end("<h1>Oops, don't worry. <br>I can not found this page, but you can try again.</h1>");
 		console.log(req.url);
 	}
 }).listen(3000); 
@@ -48,12 +47,12 @@ npm init
 ```
 
 ### Express
-Framework nodejs para aplicações web.
+Framework NodeJS para aplicações web.
 #### Instalação
 ```bash
 npm install express -save
 ```
->```-save``` o express vai junto com o projeto
+>```-save``` o Express vai junto com o projeto
 
 #### refactoring do projeto
 Crie /app.js
@@ -61,10 +60,10 @@ Crie /app.js
 // FILE: app.js
 
 var express = require('express'); // recuperando a lib do express
-var app = express(); // executando a função do modo do express
+var app = express(); // executando a função do módulo do express
 
 
-// função que fica escutando a porta 300; faz-se necessário um callback para o servidor.
+// função que fica escutando a porta 300; é necessário um callback para o servidor.
 app.listen(3000, function(){
 	console.log("Estou escutando na porta 3000 com Express!");
 }); 
@@ -84,7 +83,7 @@ app.get('/', function(req, res){
 	res.send('<h1>Sou a raíz com Express.</h1>');
 });
 ```
->OBS.: utiliza-se o ```end()``` no NodeJS; no Express, utiliza-se ```send()```.
+>OBS.: utiliza-se o ```end()``` no NodeJS 'puro'; Com Express, utiliza-se ```send()```.
 
 
 ### EJS (<%= Embedded JavaScript %>)
@@ -100,7 +99,7 @@ Agora precisamos informar que a Engine de View do Express passou a ser o módulo
 app.set('view engine', 'ejs'); // usamos esse método para modificar alguma coisa na 'tabela de propriedades' do Express.
 ```
 
-#### Preparando o ambiente para deixar as views em local
+#### Organizando o ambiente para deixar as views em um só local
 Por padrão, crie o diretório: _/views/_.
 A ideia é, dentro desse diretório, criar nossos arquivos HTML para que esses arquivos possam ser consumidos em função das requisições.
 
